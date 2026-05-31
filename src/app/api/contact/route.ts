@@ -24,7 +24,7 @@ const ALLOWED_TYPES = [
 const MAX_SIZE = 2 * 1024 * 1024;
 
 export async function POST(req: NextRequest) {
-  const resend = new Resend(process.env.RESEND_API_KEY);
+  const resend = new Resend(process.env.RESEND_API_KEY ?? '');
   const ip = req.headers.get('x-forwarded-for') ?? req.headers.get('x-real-ip') ?? 'unknown';
   if (isRateLimited(ip)) {
     return NextResponse.json(
