@@ -1,5 +1,6 @@
 import React from 'react';
 import ContactForm from '@/components/ContactForm';
+import MobileMenu from '@/components/MobileMenu';
 
 // --- Componentes UI Reutilizables ---
 
@@ -114,14 +115,7 @@ export default function LasCosasDeMinaPage() {
             </a>
             <Button href="#contacto" variant="primary">Contacto</Button>
           </div>
-
-          <div className="md:hidden flex items-center">
-            <button className="text-[#3a693a] p-2">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
-          </div>
+          <MobileMenu navLinks={navLinks} />
         </nav>
       </header>
 
@@ -197,23 +191,23 @@ export default function LasCosasDeMinaPage() {
           <div className="mb-4">
             <span className="text-xs text-[#0a0909] font-mulish">___ Sobre nosotros</span>
           </div>
-          <div>
-            <p className="text-xl text-gray-800 leading-relaxed font-medium bg-white p-10 rounded-2xl shadow-sm border border-[#3a693a]/10">
+          <div className="text-xl text-gray-800 leading-relaxed font-medium bg-white p-10 rounded-2xl shadow-sm border border-[#3a693a]/10">
+            <p>
               En <strong className="text-[#3a693a]">Las Cosas de Mina</strong> nos apasiona el detalle. Llevamos años dedicados a dar vida a tus proyectos,
               ya sea un regalo especial para un ser querido o la decoración perfecta para tu gran evento.
               Cuidamos cada producto como si fuera el único, garantizando la máxima calidad en cada entrega.
               Cada pieza es hecha a mano en Hinojosa del Duque (Córdoba) con atención al detalle.
-              <div className="group w-60 h-60 grid justify-items-center m-auto mt-4">
-                <img
-                  src="mina_miriam.jpg"
-                  alt={`Sobre nosotros`}
-                  className='rounded-full shadow-sm border border-[#3a693a]/10'
-                />
-                <div>
-                  <span className='font-semibold font-mulish'>Miriam Navas</span>
-                </div>
-              </div>
             </p>
+            <div className="group w-60 h-60 grid justify-items-center m-auto mt-4 mb-4">
+              <img
+                src="mina_miriam.jpg"
+                alt="Sobre nosotros"
+                className="rounded-full shadow-sm border border-[#3a693a]/10"
+              />
+              <div>
+                <span className="font-semibold font-mulish">Miriam Navas</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
